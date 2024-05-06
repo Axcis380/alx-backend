@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Task 1: Simple pagination.
+"""Task 1 pagination.
 """
 
 import csv
@@ -8,14 +8,14 @@ from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Retrieves the index range from a given page and page size.
+    """Retrieve index range from a given page size.
     """
 
     return ((page - 1) * page_size, ((page - 1) * page_size) + page_size)
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """Server class to paginate database of poplar baby names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -23,7 +23,7 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
+        """Cache dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
