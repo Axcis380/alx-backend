@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
-"""Deletion-resilient hypermedia pagination
+"""Deletionresilient hypermedia pagination
 """
 import csv
 from typing import Dict, List
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """Server class to paginate database of popular names.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
-        """Initializes a new Server instance.
+        """Initialize new Server instance.
         """
         self.__dataset = None
         self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
+        """Cache dataset
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -39,7 +39,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        """Retrieves info about a page from a given index and with a
+        """Retrieve info about a page from given index and with 
         specified size.
         """
         data = self.indexed_dataset()
